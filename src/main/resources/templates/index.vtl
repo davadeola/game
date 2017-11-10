@@ -3,15 +3,42 @@
     <input type="text" name="letter" value="" size="1">
   </div>
 </form>
-#if($word)
-  <h1>$word</h1>
-#else
-  <h1>What's your first letter</h1>
-  #end
-<button type="" name="button" onclick="$random">New word</button>
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Show Answer</button>
 
+<!-- <ul>
+#foreach($randomWord in $randomWords)
+<li>$randomWord</li>
+#end
+</ul> -->
+<h1>$score</h1>
+#if($word)
+<div class="trials">
+  <h1>$word</h1>
+</div>
+#else
+<h1>What's your first letter</h1>
+#end
+
+
+<div class="row">
+  <div class="col-sm-3">
+    <form class="form" action="/newgame">
+      <button  type="submit" name="button" class="btn btn-lg">NEW GAME</button>
+    </form>
+  </div>
+  <div class="col-sm-3">
+    <form class="form" action="/getnewword">
+      <button id="new" type="submit" name="button" class="btn btn-lg">NEXT WORD</button>
+    </form>
+  </div>
+  <div class="col-sm-3">
+    <button  type="button" class="btn btn-lg " data-toggle="modal" data-target="#myModal">Show Answer</button>
+  </div>
+  <div class="col-sm-3">
+    <button type="button" class="btn btn-lg "  data-toggle="modal" data-target="#myModal1">Show Hint</button>
+  </div>
+
+<!-- Trigger the modal with a button -->
+</div>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -23,10 +50,44 @@
         <h4 class="modal-title">THE ANSWER IS</h4>
       </div>
       <div class="modal-body">
-        <p>$answer</p>
+        <h2>$answer</h2>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+#if($correct)
+<h1 class="animated rubberBand">$correct</h1>
+#else
+<h1>LET'S PLAY</h1>
+#end
+
+
+
+
+<!-- Trigger the modal with a button -->
+
+</div>
+<!-- Modal -->
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">HERE IS YOUR HINT</h4>
+      </div>
+      <div class="modal-body">
+        <h2>$hint</h2>
+      </div>
+      <div class="modal-footer">
+        <form class="" action="/reduce" method="post">
+          <button type="submit" class="btn btn-default">Close</button>
+        </form>
       </div>
     </div>
 

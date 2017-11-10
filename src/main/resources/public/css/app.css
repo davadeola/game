@@ -1,0 +1,37 @@
+body{
+  font-family: sans-serif;
+  background-image: url(/css/images/bask.jpg);
+}
+
+li{
+  color: white;
+}
+h1{
+  font-size: 80px;
+  color: white;
+  text-align: center;
+  margin-top: 5%;
+}
+h2{
+  font-size: 45px;
+  color: #D40971;
+}
+
+.modal-header{
+  background-image: url(/css/images/bask.jpg);
+  color: white;
+}
+.modal-footer{
+  background-image: url(/css/images/bask.jpg);
+  color: white;
+}
+
+.btn{
+  background-image: url(/css/images/bask.jpg);
+  color: white;
+    margin-left: 70%;
+}
+
+input{
+  background-image: url(/css/images/bask.jpg);
+}
